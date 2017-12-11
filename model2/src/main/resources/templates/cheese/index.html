@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"/>
+        <title th:text="${titleIsTheTitleWeGive}">TODO supply a title</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    </head>
+    <body class="container">
+        <h1 th:text="${titleIsTheTitleWeGive}">default title</h1>
+        <nav>
+            <a href="/cheese">List</a>
+            <a href="/cheese/add">Add</a>
+            <a href="/cheese/remove">Remove</a>
+        </nav> 
+
+        <p th:unless="${cheeses} and ${cheeses.size()}">No cheese</p>
+
+        <table class="table">
+            
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>   
+            <tr th:each="cheese : ${cheeses}">
+                <td th:text="${cheese.cheeseName}"/>
+                <td th:text="${cheese.cheeseDescription}"/>
+
+            </tr>
+
+        </table>
+
+    </body>
+</html>

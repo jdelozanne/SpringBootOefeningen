@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"/>
+        <title th:text="${titleIsTheTitleWeGive}">TODO supply a title</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    </head>
+    <body>
+       
+        <h1 th:text="${title}">U bent hier om een product te maken</h1>
+
+
+        <form method="post" modelAttribute="product" style="max-width:600px;">
+            <div class="form-group">
+                <label th:for="name-field">Productname</label>
+                <input class="form-control" id="name-field" type="text" name="productnaam" />
+            </div>
+            <input type="submit" value="Add this product" />      
+        </form>
+    </body>
+</html>
